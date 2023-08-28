@@ -2,22 +2,8 @@ plugins {
     id 'groovy'
     id 'java-gradle-plugin'
     id 'maven-publish'
-}
-
-
-dependencies {
-//    implementation gradleApi()
-//    implementation localGroovy()
-    implementation 'com.android.tools.build:gradle:7.0.2'
-}
-
-gradlePlugin {
-    plugins {
-        simplePlugin {
-            id = 'com.lzy.manifest'
-            implementationClass = 'com.lzy.manifest.AndManifestPlugin'
-        }
-    }
+    //publish Gradle Plugin Portal
+    id "com.gradle.plugin-publish" version "1.2.1"
 }
 
 java {
@@ -25,6 +11,33 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+dependencies {
+//    implementation gradleApi()
+//    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:7.0.2'
+}
+
+group = 'com.lzy.manifest'
+version = "1.0.0"
+gradlePlugin {
+    website.set("https://github.com/lizhenya/AndManifestPlugin")
+    vcsUrl.set("https://github.com/lizhenya/AndManifestPlugin")
+    plugins {
+        AndManifestPlugin {
+            id = "com.lzy.manifest"
+            implementationClass = 'com.lzy.manifest.AndManifestPlugin'
+            displayName = "AndManifestPlugin"
+            description = "The Plugin of Android Manifest.xml ,permission query,exported tag auto completion,install and run gradle script"
+            tags.set(["Android", "Manifest", "permission", "query", "exported", "completion", "install"])
+        }
+    }
+}
+
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    archiveClassifier = 'sources'
+}
 
 publishing {
     repositories {
@@ -34,7 +47,7 @@ publishing {
         }
     }
     publications {
-        GP(MavenPublication) {
+        LocalMaven(MavenPublication) {
             from components.java
             groupId "com.lzy.manifest"
             artifactId "AndManifestPlugin"
