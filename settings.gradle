@@ -1,0 +1,29 @@
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == 'com.lzy.manifest') {
+                useModule("${requested.id.id}:AndManifestPlugin:${requested.version}")
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            url = './repo'
+        }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "AndManifestPlugin"
+include ':app'
+include ':manifest'
+include ':TestModule'

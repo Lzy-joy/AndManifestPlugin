@@ -1,0 +1,69 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.lzy.manifest",
+    "module": "AndManifestPlugin",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "AndManifestPlugin-1.0.0.jar",
+          "url": "AndManifestPlugin-1.0.0.jar",
+          "size": 92942,
+          "sha512": "71dd611df109726123b0089fc4a4804cc243fa7219a5d99a96d66bf8f2bd7caf0b45ebbca158234959cb36445c6588934143e7588dfa485e85f8f4285dd69afd",
+          "sha256": "64fa61c1bdf415298b10dcd5d01dd6008f85a55c26e4491da83c076b75f18ff2",
+          "sha1": "17828f81ca6b4ff2ac0f1f98a13e32e8317a2955",
+          "md5": "5c4c39d49f98944e044f7b8996e9e594"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "7.0.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "AndManifestPlugin-1.0.0.jar",
+          "url": "AndManifestPlugin-1.0.0.jar",
+          "size": 92942,
+          "sha512": "71dd611df109726123b0089fc4a4804cc243fa7219a5d99a96d66bf8f2bd7caf0b45ebbca158234959cb36445c6588934143e7588dfa485e85f8f4285dd69afd",
+          "sha256": "64fa61c1bdf415298b10dcd5d01dd6008f85a55c26e4491da83c076b75f18ff2",
+          "sha1": "17828f81ca6b4ff2ac0f1f98a13e32e8317a2955",
+          "md5": "5c4c39d49f98944e044f7b8996e9e594"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+
+dependencies {
+//    implementation gradleApi()
+//    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:7.0.2'
+}
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'com.lzy.manifest'
+            implementationClass = 'com.lzy.manifest.AndManifestPlugin'
+        }
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+
+publishing {
+    repositories {
+        maven {
+            name = 'localPluginRepository'
+            url = '../repo'
+        }
+    }
+    publications {
+        GP(MavenPublication) {
+            from components.java
+            groupId "com.lzy.manifest"
+            artifactId "AndManifestPlugin"
+            version "1.0.0"
+            //打包源码
+//            artifact sourcesJar
+        }
+    }
+}
