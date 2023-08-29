@@ -1,8 +1,8 @@
 # AndManifestPlugin
 The Plugin of Android Manifest.xml ,permission query,exported tag auto completion,install and run gradle script.
-#### AGP Version Requested
+### AGP Version Requested
 &ensp;&ensp;&ensp;&ensp;Requires AGP minimum version 7.0.2
-#### Query Permission 
+### Query Permission 
 &ensp;&ensp;&ensp;&ensp;Add the following extended configuration to build.gradle in the main project directory of the Android project:
 ```groovy
 manifestExt {
@@ -18,7 +18,7 @@ manifestExt {
 }
 ```
 &ensp;&ensp;&ensp;&ensp;The permission query results will be output to "./AndManifest/queryPermissionResult" in the project root directory.
-#### exported tag auto-completion
+### exported tag auto-completion
 &ensp;&ensp;&ensp;&ensp;In the Android project, the AGP version is 7.0 or higher and the targetSDk version is 30 or higher, and the exported tag needs to be processed in the Manifest.xml activity, service, and receiver component tags:           
 &ensp;&ensp;&ensp;&ensp;①Only applicable to activity, service, receiver component tags.        
 &ensp;&ensp;&ensp;&ensp;②The target SDK version is above 30.             
