@@ -19,10 +19,10 @@ manifestExt {
 ```
 &ensp;&ensp;&ensp;&ensp;The permission query results will be output to "./AndManifest/queryPermissionResult" in the project root directory.
 #### exported tag auto-completion
-&ensp;&ensp;&ensp;&ensp;In the Android project, the AGP version is 7.0 or higher and the targetSDk version is 30 or higher, and the exported tag needs to be processed in the Manifest.xml activity, service, and receiver component tags:
->①Only applicable to activity, service, receiver component tags.      
-②The target SDK version is above 30.            
-③The <intent-filter> filter tag is declared in the activity, service, and receiver tags. When the application project target is 31 or above, all AndroidManifest.xml in the application project, library project, and third-party SDK will be detected according to the above rules.     
+&ensp;&ensp;&ensp;&ensp;In the Android project, the AGP version is 7.0 or higher and the targetSDk version is 30 or higher, and the exported tag needs to be processed in the Manifest.xml activity, service, and receiver component tags:           
+&ensp;&ensp;&ensp;&ensp;①Only applicable to activity, service, receiver component tags.        
+&ensp;&ensp;&ensp;&ensp;②The target SDK version is above 30.             
+&ensp;&ensp;&ensp;&ensp;③The <intent-filter> filter tag is declared in the activity, service, and receiver tags. When the application project target is 30 or above, all AndroidManifest.xml in the application project, library project, and third-party SDK will be detected according to the above rules.     
 
 &ensp;&ensp;&ensp;&ensp; Adding the following extension will be able to automatically complete the missing exported tags:
 ```groovy
